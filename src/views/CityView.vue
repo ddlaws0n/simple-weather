@@ -1,9 +1,14 @@
 <template>
-  <div class="container mt-6 text-white">
-    <h1>City View!</h1>
-  </div>
+  <Suspense>
+    <AsyncCityView />
+    <template #falback>
+      <p class="text-center text-2xl text-white">Loading city...</p>
+    </template>
+  </Suspense>
 </template>
 
-<script setup></script>
+<script setup>
+import AsyncCityView from "@/components/AsyncCityView.vue";
+</script>
 
 <style scoped></style>
