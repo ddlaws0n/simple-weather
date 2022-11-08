@@ -4,11 +4,15 @@ import router from "./router";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { faCloudSun, faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCloudSun,
+  faCircleInfo,
+  faPlusCircle,
+} from "@fortawesome/free-solid-svg-icons";
 
 import "./assets/tailwind.css";
 
-library.add(faCloudSun, faCircleInfo);
+library.add(faCloudSun, faCircleInfo, faPlusCircle);
 
 const app = createApp(App);
 
