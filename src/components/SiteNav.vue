@@ -66,8 +66,8 @@ import { ref } from "vue";
 
 const route = useRoute();
 const router = useRouter();
-
 const savedCities = ref(JSON.parse(localStorage.getItem("savedCities")) || []);
+
 const addCity = () => {
   savedCities.value.push({
     id: uid(),
