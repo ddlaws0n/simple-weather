@@ -8,11 +8,12 @@ import {
   faCloudSun,
   faCircleInfo,
   faPlusCircle,
+  faTrashAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./assets/tailwind.css";
 
-library.add(faCloudSun, faCircleInfo, faPlusCircle);
+library.add(faCloudSun, faCircleInfo, faPlusCircle, faTrashAlt);
 
 const app = createApp(App);
 

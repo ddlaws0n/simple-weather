@@ -109,15 +109,27 @@
         </div>
       </div>
     </div>
+
+    <div
+      v-if="!route.query.preview"
+      @click="removeCity"
+      class="flex cursor-pointer items-center gap-2 py-12 text-white duration-150 hover:text-red-500"
+    >
+      <font-awesome-icon icon="fa-solid fa-trash-alt" size="2x" />
+      <p>Remove City</p>
+    </div>
   </div>
 </template>
 
 <script setup>
 import axios from "axios";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 
 const openWeatherApiKey = "2ae35285e980ea7eae4daaaf31f5cbbf";
+
 const route = useRoute();
+const router = useRouter();
+
 const getWeatherData = async () => {
   try {
     const weatherData = await axios.get(
@@ -142,6 +154,11 @@ const getWeatherData = async () => {
   }
 };
 const weatherData = await getWeatherData();
-</script>
 
-<style scoped></style>
+const removeCity = () => {
+  const cities = JSON.parse(localStorage.getItem("savedCities"));
+  const updatedCities = cities.filter((city) => city.id !== route.query.id);
+  localStorage.setItem("savedCities", JSON.stringify(updatedCities));
+  router.push({ name: "home" });
+};
+</script>

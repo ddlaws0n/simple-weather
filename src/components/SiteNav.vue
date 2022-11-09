@@ -69,8 +69,9 @@ const router = useRouter();
 const savedCities = ref(JSON.parse(localStorage.getItem("savedCities")) || []);
 
 const addCity = () => {
+  const cityId = uid();
   savedCities.value.push({
-    id: uid(),
+    id: cityId,
     state: route.params.state,
     city: route.params.city,
     coords: {
@@ -81,7 +82,11 @@ const addCity = () => {
   localStorage.setItem("savedCities", JSON.stringify(savedCities.value));
 
   //  delete the preview from the URL
-  router.replace({ query: { ...route.query, preview: null } });
+  // router.replace({ query: { ...route.query, preview: null } });
+  let query = Object.assign({}, route.query);
+  delete query.preview;
+  query.id = cityId;
+  router.replace({ query });
 };
 
 const modalActive = ref(null);
