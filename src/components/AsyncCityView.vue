@@ -148,6 +148,9 @@ const getWeatherData = async () => {
       hour.currentTime = utc + 1000 * weatherData.data.timezone_offset;
     });
 
+    // add delay to simulate loading
+    await new Promise((resolve) => setTimeout(resolve, 500));
+
     return weatherData.data;
   } catch (err) {
     console.log(err);
