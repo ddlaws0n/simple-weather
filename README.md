@@ -1,4 +1,12 @@
-# simple-weather
+# ⛅ Simple Weather
+
+Throwing up somd old Vue 3 tutorial projects I was following several months ago — I'm purging my laptop 💻 of old projects / files, but seeing as I have _slight_ digital hoarding tendencies (better safe than sorry) I'm pushing this up to Github.
+
+Although I'm quite fond of this one, so I MIGHT just throw it onto a server and use it as a simple weather app. 🤷‍♂️
+
+Vite / Vue Boilerplate below:
+
+## Boilerplate!
 
 This template should help get you started developing with Vue 3 in Vite.
 
